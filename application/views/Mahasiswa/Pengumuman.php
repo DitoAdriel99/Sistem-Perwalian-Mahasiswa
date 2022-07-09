@@ -5,45 +5,25 @@
 
 <div class="container-fluid">
 	<div class="row">
-	<div class="col-md-12 panel panel-primary">
-			<div class="panel-heading">Daftar Mahasiswa Perwalian</div>
-			<div class="panel-body">
-				<div class="table-responsive">
-					<table class="table table-condensed" id="" width="100%">
-						<tbody>
-							<tr class="active">
-								<td class="" id="" width="3%" align="l" valign="top"><b>NO</b></td>
-								<td class="" id="" width="5%" align="l" valign="top"><b>Tanggal</b></td>
-								<td class="" id="" width="25%" align="l" valign="top"><b>Judul</b></td>
-								<td class="" id="" width="25%" align="l" valign="top"><b>Respon?</b></td>
-								<td class="" id="" width="5%" align="l" valign="top"><b>Detail</b></td>
-							</tr>
-							<?php
-							$count = 0;
-							foreach ($pengumuman as $row) :
-								$count = $count + 1;
-							?>
+		<div class="col-md-12">
 
-								<tr class="">
-									<td class="" id="" width="3%" align="l" valign="top"><?= $count ?></td>
-									<td class="" id="" width="5%" align="l" valign="top"><?= $row->tanggal ?></td>
-									<td class="" id="" width="28%" align="l" valign="top"><?= $row->judul ?></td>
-									<?php if($row->respon == 0){ ?>
-									<td class="" id="" width="5%" align="l" valign="top">Tidak</td>
-									<?php }else{ ?>
-									<td class="" id="" width="5%" align="l" valign="top">Iya</td>
-									<?php } ?>
-									<td class="" id="" width="5%" align="l" valign="top">
-										<a class="btn btn-primary" href="<?= base_url() . 'Dosen/PengumumanMahasiswa/detailPengumuman/' . $row->id_pengumuman  ?>"><i class="fa-solid fa-eye"></i> Lihat Info</a>
+			<?php
+			$count = 0;
+			foreach ($pengumuman as $row) :
+				$count = $count + 1;
+			?>
+				<div class="card">
+					<div class="card-header">
+						<?= $row->tanggal ?>
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Judul: <?= $row->judul ?></h5>
+						<a class="btn btn-primary" href="<?= base_url() . 'Mahasiswa/Pengumuman/detailPengumuman/' . $row->id_pengumuman  ?>"><i class="fa-solid fa-eye"></i> Lihat Info</a>
 
-									</td>
-								</tr>
-							<?php endforeach ?>
-						</tbody>
-					</table>
+					</div>
 				</div>
-
-			</div>
+				<br>
+				<?php endforeach ?>
 		</div>
 	</div>
 </div>

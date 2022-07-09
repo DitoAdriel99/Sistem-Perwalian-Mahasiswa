@@ -17,6 +17,7 @@ class PengumumanMhs_model extends CI_Model
 		$query = $this->db->select('*')
 			->from('pengumuman')
 			->where('angkatan', $pj_angkatan)
+			->order_by('id_pengumuman', 'desc')
 			->get();
 		return $query->result();
 	}
