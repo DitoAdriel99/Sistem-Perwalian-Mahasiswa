@@ -33,6 +33,7 @@
 						<ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
 							<li><a class="dropdown-item" href="<?= base_url(). 'Dosen/DaftarMahasiswa' ?>">Daftar Mahasiswa Perwalian</a></li>
 							<li><a class="dropdown-item" href="<?= base_url(). 'Dosen/PengumumanMahasiswa' ?>">Pengumuman</a></li>
+							<li><a class="dropdown-item" href="<?= base_url(). 'Dosen/Laporan' ?>">Laporan</a></li>
 						</ul>
 					</li>
 				</ul>

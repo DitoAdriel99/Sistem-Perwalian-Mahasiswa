@@ -7,12 +7,14 @@ class DaftarMhs_model extends CI_Model
 		$this->load->database();
 	}
 
-	public function getDaftarMahasiswa($pj_angkatan)
+	public function getDaftarMahasiswa($pj_angkatan,$nidn)
 	{
 		$query = $this->db->select('*')
 			->from('users')
 			->where('roles',1)
 			->where('angkatan', $pj_angkatan)
+			->where('dosen_pembimbing', $nidn)
+			->order_by('nim','asc')
 			->get();
 		return $query->result();
 	}
@@ -79,6 +81,24 @@ class DaftarMhs_model extends CI_Model
 	public function push($data)
 	{
 		$this->db->insert('diskusi',$data);
+	}
+
+	public function cekSp($nim)
+	{
+		$query = $this->db->select('*')
+			->from('surat_peringatan')
+			->where('nim', $nim)
+			->get();
+		return $query->num_rows();
+	}
+
+	public function getSp($nim)
+	{
+		$query = $this->db->select('*')
+			->from('surat_peringatan')
+			->where('nim', $nim)
+			->get();
+		return $query->result();
 	}
 
 	

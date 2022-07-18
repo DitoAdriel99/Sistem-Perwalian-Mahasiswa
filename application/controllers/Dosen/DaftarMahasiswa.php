@@ -18,8 +18,9 @@ class DaftarMahasiswa extends CI_Controller
 	public function index()
 	{
 		$pj_angkatan = $this->session->userdata('pj_angkatan');
+		$nidn = $this->session->userdata('nidn');
 
-		$daftarMahasiswa = $this->m->getDaftarMahasiswa($pj_angkatan);
+		$daftarMahasiswa = $this->m->getDaftarMahasiswa($pj_angkatan,$nidn);
 
 		$data = [
 			'daftarMhs' => $daftarMahasiswa
@@ -35,14 +36,18 @@ class DaftarMahasiswa extends CI_Controller
 		$matakuliah = $this->m->getMatakuliah($nim);
 		$surat = $this->m->getSurat($nim);
 		$cekSurat = $this->m->cekSurat($nim);
+		$cekSp = $this->m->cekSp($nim);
+		$getSp = $this->m->getSp($nim);
 
-		// print_r($cekSurat);die;
+		// print_r($getSp);die;
 
 		$data = [
 			'mahasiswa' => $mahasiswa,
 			'matakuliah' => $matakuliah,
 			'surat' => $surat,
 			'cekSurat' => $cekSurat,
+			'cekSp' => $cekSp,
+			'getSp' => $getSp,
 		];
 
 
@@ -96,6 +101,7 @@ class DaftarMahasiswa extends CI_Controller
 	public function tambahSp()
 	{
 		$id_user = $this->input->post('id_user');
+		$nidn = $this->session->userdata('nidn');
 		$nim = $this->input->post('nim');
 		$where = ['id_user' => $id_user];
 
@@ -116,11 +122,12 @@ class DaftarMahasiswa extends CI_Controller
 			$dataUpload = array('upload_data' => $this->upload->data());
 			// $this->load->view('upload_success', $dataUpload);
 			$data = [
-				'sp' => $dataUpload['upload_data']['file_name']
+				'sp' => $dataUpload['upload_data']['file_name'],
+				'nim' => $nim,
+				'nidn' => $nidn,
 			];
 
-			$this->db->where($where);
-			$this->db->update('users', $data);
+			$this->db->insert('surat_peringatan',$data);
 			redirect('Dosen/DaftarMahasiswa/detail/' . $nim);
 
 		}

@@ -16,4 +16,22 @@ class Perwalian_model extends CI_Model
 		return $query->row();
 	}
 
+	public function cekSp($nim)
+	{
+		$query = $this->db->select('*')
+			->from('surat_peringatan')
+			->where('nim', $nim)
+			->get();
+		return $query->num_rows();
+	}
+
+	public function getSp($nim)
+	{
+		$query = $this->db->select('*')
+			->from('surat_peringatan')
+			->where('nim', $nim)
+			->get();
+		return $query->result();
+	}
+
 }

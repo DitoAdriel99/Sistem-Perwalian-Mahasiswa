@@ -35,12 +35,19 @@
 		<div class="col-md-4 panel panel-primary">
 			<div class="panel-heading">SURAT PERINGATAN</div>
 			<div class="panel-body">
-				<?php if($this->session->userdata('sp') == null){ ?>
-				Tidak ada surat peringatan yang diberikan dosen
-				<?php }else{ ?>
-					Ada surat Peringatan dari dosen
-					<a class="btn btn-primary" href="<?= base_url() . 'sp/' . $this->session->userdata('sp'); ?>" target="_blank"><i class="fa-solid fa-eye"></i> Lihat Surat</a>
-
+				<?php if ($cekSp < 1) { ?>
+					Tidak ada surat peringatan dari dosen
+				<?php } else { ?>
+					<?php
+					$count = 0;
+					foreach ($getSp as $row) :
+						$count = $count + 1;
+					?>
+						<ul>
+							<li> <a href="<?= base_url() . 'sp/' . $row->sp ?>" target="_blank"><i class="fa-solid fa-eye"></i> Lihat Surat <?= $count ?></a>
+							</li>
+						</ul>
+					<?php endforeach; ?>
 				<?php } ?>
 			</div>
 		</div>

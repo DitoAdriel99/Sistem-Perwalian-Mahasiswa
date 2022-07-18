@@ -20,17 +20,20 @@ class Perwalian extends CI_Controller
 		// printf($this->session->userdata('nim'));die;
 
 		$pj_angkatan = $this->session->userdata('angkatan');
+		$nim = $this->session->userdata('nim');
 		$dosen = $this->m->getDosen($pj_angkatan);
-
+		$cekSp = $this->m->cekSp($nim);
+		$getSp = $this->m->getSp($nim);
 		// print_r($dosen);die;
 
 		$data = [
-			'dosen' => $dosen
+			'dosen' => $dosen, 
+			'cekSp' => $cekSp,
+			'getSp' => $getSp,
 		];
 
 		$this->load->view('TemplateMahasiswa/Header');
-		$this->load->view('Mahasiswa/Perwalian',$data);
+		$this->load->view('Mahasiswa/Perwalian', $data);
 		$this->load->view('TemplateMahasiswa/Footer');
 	}
-
 }

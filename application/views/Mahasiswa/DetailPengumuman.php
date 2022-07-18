@@ -4,7 +4,7 @@
 </Blockquote>
 
 <div class="container-fluid">
-	<div class="col-md-6 panel panel-primary" style="margin-left: 390px;">
+	<div class="col-md-12 panel panel-primary">
 		<div class="panel-heading">Pengumuman</div>
 		<div class="panel-body">
 			<table>
@@ -40,7 +40,7 @@
 				<div class="row">
 					<form method="post" action="<?= base_url() . 'Mahasiswa/Pengumuman/tambahCatatan' ?>">
 
-						<div class="col-md-8">
+						<div class="col-md-10">
 							<input type="hidden" value="<?= $pengumuman->id_pengumuman ?>" name="id_pengumuman">
 							<input type="hidden" value="<?= $this->session->userdata('id_user'); ?>" name="id_user">
 							<input type="text" class="form-control" name="isi" required>

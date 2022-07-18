@@ -48,6 +48,7 @@
 								<td class="" id="" width="5%" align="l" valign="top"><b>KODE</b></td>
 								<td class="" id="" width="25%" align="l" valign="top"><b>MATAKULIAH</b></td>
 								<td class="" id="" width="5%" align="l" valign="top"><b><small>PRESENSI(sebelum uts)</small></b></td>
+								<td class="" id="" width="5%" align="l" valign="top"><b><small>PRESENSI(setelah uts)</small></b></td>
 								<td class="" id="" width="8%" align="l" valign="top"><b><small>EVALUASI</small></b></td>
 							</tr>
 							<?php
@@ -59,6 +60,7 @@
 									<td class="" id="" width="5%" align="l" valign="top"><?= $row->kode_mk ?></td>
 									<td class="" id="" width="5%" align="l" valign="top"><?= $row->nama_mk ?></td>
 									<td class="" id="" width="5%" align="l" valign="top"><?= $row->absensi ?></td>
+									<td class="" id="" width="5%" align="l" valign="top"><?= $row->absensi_setelah ?></td>
 									<td class="" id="" width="5%" align="l" valign="top">
 										<?php if ($row->absensi < 4) { ?>
 											<span class="badge bg-danger">Danger</span>
@@ -102,13 +104,18 @@
 					<div class="mb-3">
 						<button type="submit" class="btn btn-primary mb-3">Upload</button>
 					</div>
-					<?php if ($mahasiswa->sp == null) { ?>
+					<?php if ($cekSp < 1) { ?>
 					<?php } else { ?>
-						<div class="mb-3">
-							Lihat Surat Peringatan
-							<a class="btn btn-primary" href="<?= base_url() . 'sp/' . $mahasiswa->sp ?>" target="_blank"><i class="fa-solid fa-eye"></i> Lihat Surat</a>
-
-						</div>
+						<?php 
+							$count = 0;
+							foreach ($getSp as $row) : 
+								$count = $count + 1;
+							?>
+							<ul>
+								<li> <a href="<?= base_url() . 'sp/'. $row->sp?>" target="_blank"><i class="fa-solid fa-eye"></i> Lihat Surat <?= $count ?></a>
+								</li>
+							</ul>
+						<?php endforeach; ?>
 					<?php } ?>
 
 				</form>
