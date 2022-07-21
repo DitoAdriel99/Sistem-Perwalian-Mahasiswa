@@ -17,8 +17,6 @@ class HalamanUtama extends CI_Controller
 
 	public function index()
 	{
-		// printf($this->session->userdata('nim'));die;
-
 		$this->load->view('TemplateMahasiswa/Header');
 		$this->load->view('Mahasiswa/HalamanUtama');
 		$this->load->view('TemplateMahasiswa/Footer');

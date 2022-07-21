@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 18, 2022 at 07:44 AM
+-- Generation Time: Jul 21, 2022 at 02:54 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -42,7 +42,9 @@ CREATE TABLE `diskusi` (
 INSERT INTO `diskusi` (`id_diskusi`, `nim`, `pengirim`, `isi`, `tanggal`) VALUES
 (9, '72180225', 'Dito ADriel', 'dfgdfgdfg', '30-06-2022 16:35:09'),
 (10, '72180225', 'yeyen', 'apelo', '30-06-2022 16:35:37'),
-(11, '72180225', 'yeyen', 'woy taek', '30-06-2022 22:06:06');
+(11, '72180225', 'yeyen', 'woy taek', '30-06-2022 22:06:06'),
+(12, '72210225', 'yeyen', 'Halloo', '19-07-2022 22:56:42'),
+(13, '72210225', 'Dito ADriel', 'Halo bu dosen', '19-07-2022 23:29:15');
 
 -- --------------------------------------------------------
 
@@ -56,22 +58,6 @@ CREATE TABLE `diskusi_pengumuman` (
   `id_user` int(255) DEFAULT NULL,
   `isi` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `diskusi_pengumuman`
---
-
-INSERT INTO `diskusi_pengumuman` (`id`, `id_pengumuman`, `id_user`, `isi`) VALUES
-(2, 5, 86, 'dgdfg'),
-(4, 5, 86, 'kjsdfkds'),
-(5, 5, 86, 'fdlghldfgjldfkgjdfkgj'),
-(6, 5, 86, 'sldnfdsnfdsf'),
-(7, 5, 86, 'sdnfsdnfds'),
-(8, 1, 87, 'sdfsdf'),
-(9, 1, 87, 'sldnfsdnfsdf'),
-(10, 1, 87, 'dsknfldsf'),
-(11, 1, 86, 'dsnfkdsnf'),
-(12, 6, 87, 'sdsdsd');
 
 -- --------------------------------------------------------
 
@@ -144,61 +130,61 @@ INSERT INTO `matakuliah` (`id_matakuliah`, `nim`, `nidn`, `kode_mk`, `nama_mk`, 
 (48, 72200397, 502049501, 'SI0005', 'Rekayasa Perangkat Lunak', '4', '1'),
 (49, 72200397, 502049501, 'SI0004', 'Pemrograman Berbasis Web', '6', '4'),
 (50, 72200397, 502049501, 'SI0005', 'Rekayasa Perangkat Lunak', '2', '3'),
-(51, 72200408, 502049501, 'SI0003', 'Pengantar Sistem Informasi', '7', '1'),
-(52, 72200408, 502049501, 'SI0004', 'Pemrograman Berbasis Web', '7', '2'),
-(53, 72200408, 502049501, 'SI0005', 'Rekayasa Perangkat Lunak', '5', '6'),
-(54, 72200408, 502049501, 'SI0004', 'Pemrograman Berbasis Web', '5', '3'),
-(55, 72200408, 502049501, 'SI0005', 'Rekayasa Perangkat Lunak', '1', '4'),
-(56, 72200415, 502049501, 'SI0003', 'Pengantar Sistem Informasi', '4', '2'),
-(57, 72200415, 502049501, 'SI0004', 'Pemrograman Berbasis Web', '3', '1'),
-(58, 72200415, 502049501, 'SI0005', 'Rekayasa Perangkat Lunak', '3', '2'),
-(59, 72200415, 502049501, 'SI0004', 'Pemrograman Berbasis Web', '5', '7'),
-(60, 72200415, 502049501, 'SI0005', 'Rekayasa Perangkat Lunak', '1', '1'),
-(61, 72200429, 502049501, 'SI0003', 'Pengantar Sistem Informasi', '2', '4'),
-(62, 72200429, 502049501, 'SI0004', 'Pemrograman Berbasis Web', '2', '3'),
-(63, 72200429, 502049501, 'SI0005', 'Rekayasa Perangkat Lunak', '1', '3'),
-(64, 72200429, 502049501, 'SI0004', 'Pemrograman Berbasis Web', '6', '6'),
-(65, 72200429, 502049501, 'SI0005', 'Rekayasa Perangkat Lunak', '7', '4'),
-(66, 72200435, 502049501, 'SI0003', 'Pengantar Sistem Informasi', '2', '3'),
-(67, 72200435, 502049501, 'SI0004', 'Pemrograman Berbasis Web', '3', '1'),
-(68, 72200435, 502049501, 'SI0005', 'Rekayasa Perangkat Lunak', '7', '5'),
-(69, 72200435, 502049501, 'SI0004', 'Pemrograman Berbasis Web', '7', '5'),
-(70, 72200435, 502049501, 'SI0005', 'Rekayasa Perangkat Lunak', '4', '5'),
-(71, 72200437, 502049501, 'SI0003', 'Pengantar Sistem Informasi', '6', '1'),
-(72, 72200437, 502049501, 'SI0004', 'Pemrograman Berbasis Web', '3', '3'),
-(73, 72200437, 502049501, 'SI0005', 'Rekayasa Perangkat Lunak', '3', '6'),
-(74, 72200437, 502049501, 'SI0004', 'Pemrograman Berbasis Web', '1', '5'),
-(75, 72200437, 502049501, 'SI0005', 'Rekayasa Perangkat Lunak', '2', '2'),
-(76, 72210448, 1, 'SI0003', 'Pengantar Sistem Informasi', '7', '1'),
-(77, 72210448, 1, 'SI0004', 'Pemrograman Berbasis Web', '1', '4'),
-(78, 72210448, 1, 'SI0005', 'Rekayasa Perangkat Lunak', '4', '2'),
-(79, 72210448, 1, 'SI0004', 'Pemrograman Berbasis Web', '3', '7'),
-(80, 72210448, 1, 'SI0005', 'Rekayasa Perangkat Lunak', '7', '5'),
-(81, 72210453, 1, 'SI0003', 'Pengantar Sistem Informasi', '1', '4'),
-(82, 72210453, 1, 'SI0004', 'Pemrograman Berbasis Web', '3', '5'),
-(83, 72210453, 1, 'SI0005', 'Rekayasa Perangkat Lunak', '4', '4'),
-(84, 72210453, 1, 'SI0004', 'Pemrograman Berbasis Web', '3', '4'),
-(85, 72210453, 1, 'SI0005', 'Rekayasa Perangkat Lunak', '3', '2'),
-(86, 72210454, 1, 'SI0003', 'Pengantar Sistem Informasi', '5', '6'),
-(87, 72210454, 1, 'SI0004', 'Pemrograman Berbasis Web', '3', '6'),
-(88, 72210454, 1, 'SI0005', 'Rekayasa Perangkat Lunak', '5', '7'),
-(89, 72210454, 1, 'SI0004', 'Pemrograman Berbasis Web', '2', '1'),
-(90, 72210454, 1, 'SI0005', 'Rekayasa Perangkat Lunak', '3', '6'),
-(91, 72210456, 1, 'SI0003', 'Pengantar Sistem Informasi', '5', '6'),
-(92, 72210456, 1, 'SI0004', 'Pemrograman Berbasis Web', '5', '2'),
-(93, 72210456, 1, 'SI0005', 'Rekayasa Perangkat Lunak', '2', '2'),
-(94, 72210456, 1, 'SI0004', 'Pemrograman Berbasis Web', '3', '7'),
-(95, 72210456, 1, 'SI0005', 'Rekayasa Perangkat Lunak', '6', '4'),
-(96, 72210457, 1, 'SI0003', 'Pengantar Sistem Informasi', '5', '3'),
-(97, 72210457, 1, 'SI0004', 'Pemrograman Berbasis Web', '2', '2'),
-(98, 72210457, 1, 'SI0005', 'Rekayasa Perangkat Lunak', '1', '3'),
-(99, 72210457, 1, 'SI0004', 'Pemrograman Berbasis Web', '6', '6'),
-(100, 72210457, 1, 'SI0005', 'Rekayasa Perangkat Lunak', '5', '2'),
-(101, 72210462, 1, 'SI0003', 'Pengantar Sistem Informasi', '1', '6'),
-(102, 72210462, 1, 'SI0004', 'Pemrograman Berbasis Web', '4', '3'),
-(103, 72210462, 1, 'SI0005', 'Rekayasa Perangkat Lunak', '2', '4'),
-(104, 72210462, 1, 'SI0004', 'Pemrograman Berbasis Web', '5', '1'),
-(105, 72210462, 1, 'SI0005', 'Rekayasa Perangkat Lunak', '3', '6'),
+(51, 72200408, 503017010, 'SI0003', 'Pengantar Sistem Informasi', '7', '1'),
+(52, 72200408, 503017010, 'SI0004', 'Pemrograman Berbasis Web', '7', '2'),
+(53, 72200408, 503017010, 'SI0005', 'Rekayasa Perangkat Lunak', '5', '6'),
+(54, 72200408, 503017010, 'SI0004', 'Pemrograman Berbasis Web', '5', '3'),
+(55, 72200408, 503017010, 'SI0005', 'Rekayasa Perangkat Lunak', '1', '4'),
+(56, 72200415, 503017010, 'SI0003', 'Pengantar Sistem Informasi', '4', '2'),
+(57, 72200415, 503017010, 'SI0004', 'Pemrograman Berbasis Web', '3', '1'),
+(58, 72200415, 503017010, 'SI0005', 'Rekayasa Perangkat Lunak', '3', '2'),
+(59, 72200415, 503017010, 'SI0004', 'Pemrograman Berbasis Web', '5', '7'),
+(60, 72200415, 503017010, 'SI0005', 'Rekayasa Perangkat Lunak', '1', '1'),
+(61, 72200429, 503017010, 'SI0003', 'Pengantar Sistem Informasi', '2', '4'),
+(62, 72200429, 503017010, 'SI0004', 'Pemrograman Berbasis Web', '2', '3'),
+(63, 72200429, 503017010, 'SI0005', 'Rekayasa Perangkat Lunak', '1', '3'),
+(64, 72200429, 503017010, 'SI0004', 'Pemrograman Berbasis Web', '6', '6'),
+(65, 72200429, 503017010, 'SI0005', 'Rekayasa Perangkat Lunak', '7', '4'),
+(66, 72200435, 503017010, 'SI0003', 'Pengantar Sistem Informasi', '2', '3'),
+(67, 72200435, 503017010, 'SI0004', 'Pemrograman Berbasis Web', '3', '1'),
+(68, 72200435, 503017010, 'SI0005', 'Rekayasa Perangkat Lunak', '7', '5'),
+(69, 72200435, 503017010, 'SI0004', 'Pemrograman Berbasis Web', '7', '5'),
+(70, 72200435, 503017010, 'SI0005', 'Rekayasa Perangkat Lunak', '4', '5'),
+(71, 72200437, 503017010, 'SI0003', 'Pengantar Sistem Informasi', '6', '1'),
+(72, 72200437, 503017010, 'SI0004', 'Pemrograman Berbasis Web', '3', '3'),
+(73, 72200437, 503017010, 'SI0005', 'Rekayasa Perangkat Lunak', '3', '6'),
+(74, 72200437, 503017010, 'SI0004', 'Pemrograman Berbasis Web', '1', '5'),
+(75, 72200437, 503017010, 'SI0005', 'Rekayasa Perangkat Lunak', '2', '2'),
+(76, 72210448, 503017001, 'SI0003', 'Pengantar Sistem Informasi', '7', '1'),
+(77, 72210448, 503017001, 'SI0004', 'Pemrograman Berbasis Web', '1', '4'),
+(78, 72210448, 503017001, 'SI0005', 'Rekayasa Perangkat Lunak', '4', '2'),
+(79, 72210448, 503017001, 'SI0004', 'Pemrograman Berbasis Web', '3', '7'),
+(80, 72210448, 503017001, 'SI0005', 'Rekayasa Perangkat Lunak', '7', '5'),
+(81, 72210453, 503017001, 'SI0003', 'Pengantar Sistem Informasi', '1', '4'),
+(82, 72210453, 503017001, 'SI0004', 'Pemrograman Berbasis Web', '3', '5'),
+(83, 72210453, 503017001, 'SI0005', 'Rekayasa Perangkat Lunak', '4', '4'),
+(84, 72210453, 503017001, 'SI0004', 'Pemrograman Berbasis Web', '3', '4'),
+(85, 72210453, 503017001, 'SI0005', 'Rekayasa Perangkat Lunak', '3', '2'),
+(86, 72210454, 503017001, 'SI0003', 'Pengantar Sistem Informasi', '5', '6'),
+(87, 72210454, 503017001, 'SI0004', 'Pemrograman Berbasis Web', '3', '6'),
+(88, 72210454, 503017001, 'SI0005', 'Rekayasa Perangkat Lunak', '5', '7'),
+(89, 72210454, 503017001, 'SI0004', 'Pemrograman Berbasis Web', '2', '1'),
+(90, 72210454, 503017001, 'SI0005', 'Rekayasa Perangkat Lunak', '3', '6'),
+(91, 72210456, 503017001, 'SI0003', 'Pengantar Sistem Informasi', '5', '6'),
+(92, 72210456, 503017001, 'SI0004', 'Pemrograman Berbasis Web', '5', '2'),
+(93, 72210456, 503017001, 'SI0005', 'Rekayasa Perangkat Lunak', '2', '2'),
+(94, 72210456, 503017001, 'SI0004', 'Pemrograman Berbasis Web', '3', '7'),
+(95, 72210456, 503017001, 'SI0005', 'Rekayasa Perangkat Lunak', '6', '4'),
+(96, 72210457, 503017001, 'SI0003', 'Pengantar Sistem Informasi', '5', '3'),
+(97, 72210457, 503017001, 'SI0004', 'Pemrograman Berbasis Web', '2', '2'),
+(98, 72210457, 503017001, 'SI0005', 'Rekayasa Perangkat Lunak', '1', '3'),
+(99, 72210457, 503017001, 'SI0004', 'Pemrograman Berbasis Web', '6', '6'),
+(100, 72210457, 503017001, 'SI0005', 'Rekayasa Perangkat Lunak', '5', '2'),
+(101, 72210462, 503017001, 'SI0003', 'Pengantar Sistem Informasi', '1', '6'),
+(102, 72210462, 503017001, 'SI0004', 'Pemrograman Berbasis Web', '4', '3'),
+(103, 72210462, 503017001, 'SI0005', 'Rekayasa Perangkat Lunak', '2', '4'),
+(104, 72210462, 503017001, 'SI0004', 'Pemrograman Berbasis Web', '5', '1'),
+(105, 72210462, 503017001, 'SI0005', 'Rekayasa Perangkat Lunak', '3', '6'),
 (106, 72210464, 503017009, 'SI0003', 'Pengantar Sistem Informasi', '1', '7'),
 (107, 72210464, 503017009, 'SI0004', 'Pemrograman Berbasis Web', '2', '1'),
 (108, 72210464, 503017009, 'SI0005', 'Rekayasa Perangkat Lunak', '1', '5'),
@@ -224,12 +210,12 @@ INSERT INTO `matakuliah` (`id_matakuliah`, `nim`, `nidn`, `kode_mk`, `nama_mk`, 
 (128, 72200999, NULL, 'SI0005', 'Rekayasa Perangkat Lunak', '2', '5'),
 (129, 72200999, NULL, 'SI0004', 'Pemrograman Berbasis Web', '4', '7'),
 (130, 72200999, NULL, 'SI0005', 'Rekayasa Perangkat Lunak', '2', '6'),
-(131, 72210225, 1, 'SI111', 'Program Dasar Java', '2', '7'),
-(132, 72210225, 1, 'SI222', 'Interaksi Manusia dan Komputer', '2', '4'),
-(133, 72210225, 1, 'SI333', 'Pemrograman Berbasis Mobile', '6', '7'),
-(134, 72210225, 1, 'SI0000', 'Front End', '7', '1'),
-(135, 72210225, 1, 'SI0001 ', 'Algoritma Struktur Data', '5', '5'),
-(136, 72210225, 1, 'SI0002', 'Matematika Sistem Informasi', '4', '6');
+(131, 72210225, 503017001, 'SI111', 'Program Dasar Java', '2', '7'),
+(132, 72210225, 503017001, 'SI222', 'Interaksi Manusia dan Komputer', '2', '4'),
+(133, 72210225, 503017001, 'SI333', 'Pemrograman Berbasis Mobile', '6', '7'),
+(134, 72210225, 503017001, 'SI0000', 'Front End', '7', '1'),
+(135, 72210225, 503017001, 'SI0001 ', 'Algoritma Struktur Data', '5', '5'),
+(136, 72210225, 503017001, 'SI0002', 'Matematika Sistem Informasi', '4', '6');
 
 -- --------------------------------------------------------
 
@@ -251,12 +237,7 @@ CREATE TABLE `pengumuman` (
 --
 
 INSERT INTO `pengumuman` (`id_pengumuman`, `judul`, `deskripsi`, `angkatan`, `tanggal`, `respon`) VALUES
-(1, 'sdfsdfds', 'fsdfsdf\r\n						', '2018', '30-06-2022 15:47:41', NULL),
-(2, 'Pengeluaran Mahasiswa', 'Bagi Mahasiswa yang mengikuti harap masuk ke link dibawah ini\r\n						', '2018', '30-06-2022 15:55:20', NULL),
-(3, 'Perwalian jingan', 'Harap Mahasiswa Bla bla bla blb bla\r\n\r\n\r\nLink Pertemuan: https://ssat.ukdw.ac.id/students/?l=1&p=0\r\n						', '2018', '30-06-2022 16:05:33', NULL),
-(4, 'Ngeri Ngeri sedap', 'Bagi Mahsiswa dengan NIM\r\n\r\n7218843\r\n34\r\n343\r\n43434\r\n33\r\n43\r\n43434\r\n\r\nHarap join meet dengan link berikut\r\n						', '2020', '30-06-2022 21:36:19', NULL),
-(5, 'PEmanggilan mahasiswa goblok', 'buat nama nya rere rara riri ruru ikut pertemuan di link tersebut: https://meet.google.com/pgn-bpeh-zrh?pli=1			', '2018', '30-06-2022 22:03:17', NULL),
-(6, 'TESTOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO', '\r\n			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris maximus ante eu finibus congue. Nullam eu nibh dignissim, porttitor massa et, interdum magna. Nulla facilisi. Sed congue mi est, quis pretium purus finibus vel. Etiam fermentum eros a la', '2021', '14-07-2022 21:52:29', 1);
+(7, 'Pemanggilan Mahasiswa Dengan IPK < 2', 'Harap Mahasiswa dengan nim xxxxxxx,xxxxxxx,xxxxxxx,xxxxxxx\r\n\r\nMengikuti pertemuan di link: https://meet.google.com/\r\n						', '2021', '19-07-2022 23:00:32', 1);
 
 -- --------------------------------------------------------
 
@@ -343,28 +324,20 @@ INSERT INTO `users` (`id_user`, `username`, `email`, `password`, `roles`, `nim`,
 (57, 'Selvi Ayu Melianda Sarumaha', 'selvi@si.ukdw.ac.id', 'selvi', '1', '72200429', '3,50', '2020', NULL, NULL, '503017010'),
 (58, 'Irene Amelia', 'irene@si.ukdw.ac.id', 'irene', '1', '72200435', '4,00', '2020', NULL, NULL, '503017010'),
 (59, 'Monica Gracethea', 'monica@si.ukdw.ac.id', 'monica', '1', '72200437', '2,35', '2020', NULL, NULL, '503017010'),
-(60, 'Kelvin Lie', 'kelvin@si.ukdw.ac.id', 'kelvin', '1', '72210448', '3,00', '2021', NULL, NULL, '1'),
-(61, 'Clairine Nita Agustine', 'clay@si.ukdw.ac.id', 'clay', '1', '72210453', '2,75', '2021', NULL, NULL, '1'),
-(62, 'Valentino Raviendra Christando', 'valen@si.ukdw.ac.id', 'valen', '1', '72210454', '1,50', '2021', NULL, NULL, '1'),
-(63, 'Nikolaus Pastika Bara Satyaradi', 'nik@si.ukdw.ac.id', 'nik', '1', '72210456', '3,45', '2021', NULL, NULL, '1'),
-(64, 'Verel Krisna Wibowo', 'verel@si.ukdw.ac.id', 'verel', '1', '72210457', '3,50', '2021', NULL, NULL, '1'),
-(65, 'Itasa Harani', 'itasa@si.ukdw.ac.id', 'itasa', '1', '72210462', '3,25', '2021', NULL, NULL, '1'),
+(60, 'Kelvin Lie', 'kelvin@si.ukdw.ac.id', 'kelvin', '1', '72210448', '3,00', '2021', NULL, NULL, '503017001'),
+(61, 'Clairine Nita Agustine', 'clay@si.ukdw.ac.id', 'clay', '1', '72210453', '2,75', '2021', NULL, NULL, '503017001'),
+(62, 'Valentino Raviendra Christando', 'valen@si.ukdw.ac.id', 'valen', '1', '72210454', '1,50', '2021', NULL, NULL, '503017001'),
+(63, 'Nikolaus Pastika Bara Satyaradi', 'nik@si.ukdw.ac.id', 'nik', '1', '72210456', '3,45', '2021', NULL, NULL, '503017001'),
+(64, 'Verel Krisna Wibowo', 'verel@si.ukdw.ac.id', 'verel', '1', '72210457', '3,50', '2021', NULL, NULL, '503017001'),
+(65, 'Itasa Harani', 'itasa@si.ukdw.ac.id', 'itasa', '1', '72210462', '3,25', '2021', NULL, NULL, '503017001'),
 (66, 'Jerry Marcelino Nugroho', 'jer@si.ukdw.ac.id', 'jerry', '1', '72210464', '1,75', '2021', NULL, NULL, '503017009'),
 (67, 'Stefanus Audy Advent Kristy', 'stef@si.ukdw.ac.id', 'stef', '1', '72210465', '2,70', '2021', NULL, NULL, '503017009'),
 (68, 'Zellyne Octaviani', 'zelly@si.ukdw.ac.id', 'zelly', '1', '72210468', '4,00', '2021', NULL, NULL, '503017009'),
-(69, 'Tasha Prijanto Putri', 'tasha@si.ukdw.ac.id', 'tasha', '1', '72210469', '2,30', '2021', NULL, NULL, '503017009'),
-(70, 'Christian Denny Christanto', 'christian@si.ukdw.ac.id', 'christian', '1', '72210470', '2,50', '2021', NULL, NULL, '503017009'),
-(71, 'Jane Patricia Putri', 'jane@si.ukdw.ac.id', 'jane', '1', '72210472', '3,50', '2021', NULL, NULL, '503017009'),
-(72, 'Adelia Christine Silaban', 'adelia@si.ukdw.ac.id', 'adelia', '1', '72210475', '2,40', '2021', NULL, NULL, '503017009'),
-(73, 'Era Riece Swany Angelica', 'era@si.ukdw.ac.id', 'era', '1', '72210476', '1,50', '2021', NULL, NULL, '503017009'),
-(74, 'Bryan Nicholas Winata', 'bry@si.ukdw.ac.id', 'bry', '1', '72210477', '4,00', '2021', NULL, NULL, '503017009'),
-(75, 'Yetli Oslan, S.Kom., M.T', 'yetliii@staff.ukdw.ac.id', 'yetli', '2', NULL, '2,10', NULL, 503017001, NULL, NULL),
 (76, 'Gabriel Indra Widi Tamtama, S.Kom., M.Kom.', 'indraaa@staff.ukdw.ac.id', 'indra', '2', NULL, '4,00', NULL, 502049501, '2020', NULL),
 (81, 'Katon Wijana', 'katon@staff.ukdw.ac.id', 'katon', '2', NULL, '1,75', NULL, 503017009, '2021', NULL),
 (83, 'Umi Proboyekti S.Kom., MLIS', 'othiee@staff.ukdw.ac.id', 'umi', '2', NULL, '2,60', NULL, 503017010, '2020', NULL),
-(84, 'keren kezia', 'lerenkezia12@gmail.com', 'yeyen', '1', '72210222', '2,50', '2021', NULL, NULL, '503017009'),
-(86, 'Dito ADriel', 'ditoadriel@gmail.com', 'dito', '1', '72210225', '3.50', '2021', NULL, NULL, '1'),
-(87, 'yeyen', 'benedicto.adriel@si.ukdw.ac.id', 'yeyen', '2', NULL, NULL, NULL, 1, '2021', NULL);
+(86, 'Dito ADriel', 'ditoadriel@gmail.com', 'dito', '1', '72210225', '3.50', '2021', NULL, NULL, '503017001'),
+(87, 'Yetli Oslan, S.Kom., M.T', 'ditoadriel@gmail.com', 'yetli', '2', NULL, NULL, NULL, 503017001, '2021', NULL);
 
 --
 -- Indexes for dumped tables
@@ -420,7 +393,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `diskusi`
 --
 ALTER TABLE `diskusi`
-  MODIFY `id_diskusi` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_diskusi` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `diskusi_pengumuman`
@@ -438,7 +411,7 @@ ALTER TABLE `matakuliah`
 -- AUTO_INCREMENT for table `pengumuman`
 --
 ALTER TABLE `pengumuman`
-  MODIFY `id_pengumuman` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_pengumuman` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `surat`

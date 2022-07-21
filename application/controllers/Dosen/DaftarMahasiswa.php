@@ -19,12 +19,12 @@ class DaftarMahasiswa extends CI_Controller
 	{
 		$pj_angkatan = $this->session->userdata('pj_angkatan');
 		$nidn = $this->session->userdata('nidn');
-
 		$daftarMahasiswa = $this->m->getDaftarMahasiswa($pj_angkatan,$nidn);
 
 		$data = [
 			'daftarMhs' => $daftarMahasiswa
 		];
+
 		$this->load->view('TemplateDosen/Header');
 		$this->load->view('Dosen/DaftarMahasiswa', $data);
 		$this->load->view('TemplateDosen/Footer');
@@ -39,8 +39,6 @@ class DaftarMahasiswa extends CI_Controller
 		$cekSp = $this->m->cekSp($nim);
 		$getSp = $this->m->getSp($nim);
 
-		// print_r($getSp);die;
-
 		$data = [
 			'mahasiswa' => $mahasiswa,
 			'matakuliah' => $matakuliah,
@@ -49,7 +47,6 @@ class DaftarMahasiswa extends CI_Controller
 			'cekSp' => $cekSp,
 			'getSp' => $getSp,
 		];
-
 
 		$this->load->view('TemplateDosen/Header');
 		$this->load->view('Dosen/DetailMahasiswa', $data);
@@ -62,8 +59,6 @@ class DaftarMahasiswa extends CI_Controller
 		$nidn = $this->session->userdata('nidn');
 		$dosen = $this->m->getDosen($nidn);
 		$diskusi = $this->m->getDiskusi($nim);
-
-		// print_r($diskusi);die;
 
 		$data = [
 			'mahasiswa' => $mahasiswa,
@@ -95,7 +90,6 @@ class DaftarMahasiswa extends CI_Controller
 		$this->m->push($data);
 		redirect('Dosen/DaftarMahasiswa/viewDiskusi/' . $nim);
 
-		// print_r($data);
 	}
 
 	public function tambahSp()

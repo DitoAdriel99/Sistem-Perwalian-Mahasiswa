@@ -17,14 +17,11 @@ class Perwalian extends CI_Controller
 
 	public function index()
 	{
-		// printf($this->session->userdata('nim'));die;
-
 		$pj_angkatan = $this->session->userdata('angkatan');
 		$nim = $this->session->userdata('nim');
 		$dosen = $this->m->getDosen($pj_angkatan);
 		$cekSp = $this->m->cekSp($nim);
 		$getSp = $this->m->getSp($nim);
-		// print_r($dosen);die;
 
 		$data = [
 			'dosen' => $dosen, 

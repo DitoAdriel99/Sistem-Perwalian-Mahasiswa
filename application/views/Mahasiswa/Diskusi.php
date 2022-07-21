@@ -44,7 +44,7 @@
 </style>
 <Blockquote>
 	<h5>Halaman Diskusi Mahaiswa</h5>
-	<h5 style="color: #337ab7;"><i class="fa-solid fa-user"></i> <?= $this->session->userdata('username'); ?> / <?= $this->session->userdata('nidn'); ?></h5>
+	<h5 style="color: #337ab7;"><i class="fa-solid fa-user"></i> <?= $this->session->userdata('username'); ?> / <?= $this->session->userdata('nim'); ?></h5>
 </Blockquote>
 
 <div class="container-fluid">

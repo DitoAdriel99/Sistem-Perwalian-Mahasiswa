@@ -18,9 +18,7 @@ class Laporan extends CI_Controller
 	public function index()
 	{
 		$nidn = $this->session->userdata('nidn');
-		$angkatan = $this->session->userdata('pj_angkatan');
 		$getLaporan = $this->m->getLaporan($nidn);
-		// print_r($getLaporan);die;
 
 		$data = [
 			'getLaporan' => $getLaporan
@@ -35,7 +33,6 @@ class Laporan extends CI_Controller
 	{
 		$nidn = $this->session->userdata('nidn');
 		$email = $this->session->userdata('email');
-		// print_r($email);die;
 		$getLaporan = $this->m->getLaporan($nidn);
 		$data = [
 			'getLaporan' => $getLaporan

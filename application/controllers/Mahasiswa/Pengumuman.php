@@ -34,7 +34,7 @@ class Pengumuman extends CI_Controller
 		$pengumuman = $this->m->getDetailPengumuman($id_pengumuman);
 		$diskusi = $this->m->getDiskusi($id_pengumuman);
 		$cekRespon = $this->m->getCekRespon($id_pengumuman);
-		// print_r($getRespon);die;
+		
 		$data = [
 			'pengumuman' => $pengumuman,
 			'diskusi' => $diskusi,

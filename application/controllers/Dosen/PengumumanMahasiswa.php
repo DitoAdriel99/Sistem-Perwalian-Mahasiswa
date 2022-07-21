@@ -10,7 +10,7 @@ class PengumumanMahasiswa extends CI_Controller
 		$this->load->helper(array('form', 'url'));
 
 		if ($this->session->userdata('roles') != "2") {
-			redirect(base_url().'Dosen');
+			redirect(base_url() . 'Dosen');
 		}
 	}
 
@@ -19,13 +19,13 @@ class PengumumanMahasiswa extends CI_Controller
 	{
 		$pj_angkatan = $this->session->userdata('pj_angkatan');
 		$pengumuman = $this->m->getPengumuman($pj_angkatan);
-		// print_r($pengumuman);die;
 
 		$data = [
-			'pengumuman'=> $pengumuman
+			'pengumuman' => $pengumuman
 		];
+
 		$this->load->view('TemplateDosen/Header');
-		$this->load->view('Dosen/PengumumanMahasiswa',$data);
+		$this->load->view('Dosen/PengumumanMahasiswa', $data);
 		$this->load->view('TemplateDosen/Footer');
 	}
 
@@ -47,7 +47,7 @@ class PengumumanMahasiswa extends CI_Controller
 		];
 		$this->m->push($data);
 
-		redirect(base_url().'Dosen/PengumumanMahasiswa');
+		redirect(base_url() . 'Dosen/PengumumanMahasiswa');
 	}
 
 	public function detailPengumuman($id_pengumuman)
@@ -55,16 +55,15 @@ class PengumumanMahasiswa extends CI_Controller
 		$pengumuman = $this->m->getDetailPengumuman($id_pengumuman);
 		$diskusi = $this->m->getDiskusi($id_pengumuman);
 		$cekRespon = $this->m->getCekRespon($id_pengumuman);
-		// print_r($cekRespon);die;
 
-	
 		$data = [
 			'pengumuman' => $pengumuman,
 			'cekRespon' => $cekRespon,
 			'diskusi' => $diskusi,
 		];
+
 		$this->load->view('TemplateDosen/Header');
-		$this->load->view('Dosen/DetailPengumuman',$data);
+		$this->load->view('Dosen/DetailPengumuman', $data);
 		$this->load->view('TemplateDosen/Footer');
 	}
 
@@ -80,8 +79,7 @@ class PengumumanMahasiswa extends CI_Controller
 			'id_user' => $id_user
 		];
 
-		$this->db->insert('diskusi_pengumuman',$data);
-		redirect(base_url() . 'Dosen/PengumumanMahasiswa/detailPengumuman/'.$id_pengumuman);
+		$this->db->insert('diskusi_pengumuman', $data);
+		redirect(base_url() . 'Dosen/PengumumanMahasiswa/detailPengumuman/' . $id_pengumuman);
 	}
-
 }
